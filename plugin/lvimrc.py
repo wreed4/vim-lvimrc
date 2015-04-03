@@ -9,7 +9,7 @@ curpath = homedir.split('/')
 all_files = []
 for level in dirnames[:]: # copy dirnames because we're going to be modifying it in this loop 
     curpath.append(dirnames.pop(0))
-    lvimrc =  '/{}/.lvimrc'.format('/'.join(curpath))
+    lvimrc =  '{}/.lvimrc'.format('/'.join(curpath))
     if os.path.exists(lvimrc):
         vim.command('source ' + lvimrc)
         all_files.append(lvimrc)
