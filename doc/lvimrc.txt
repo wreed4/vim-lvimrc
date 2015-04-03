@@ -10,5 +10,10 @@ directory pointed to by the $HOME variable.
 
 That's all :)  enjoy!
 
+=========================================================
+
+:Lvimrc                                    *:Lvimrc*
+            Print the list of all files loaded by this
+            plugin
 
  vim:set et sw=4 ts=8 tw=78 ft=help:
