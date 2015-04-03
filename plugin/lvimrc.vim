@@ -1,1 +1,2 @@
-pyfile expand('<sfile>:p:h') . /lvimrc.py
+pyscript = <sfile>:p:h . /lvimrc.py
+pyfile pyscript
