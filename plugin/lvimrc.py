@@ -9,6 +9,6 @@ for level in dirnames[:]: # copy dirnames because we're going to be modifying it
     curdir = homedir + '/' + '/'.join(dirnames)
     lvimrc =  curdir + "/.lvimrc"
     if os.path.exists(lvimrc):
-        vim.command('source lvimrc')
+        vim.command('source ' + lvimrc)
     
     dirnames.pop()
