@@ -1,1 +1,1 @@
-pyfile <sfile>:p:h . /lvimrc.py
+pyfile <sfile>:p:h/lvimrc.py
