@@ -1,0 +1,14 @@
+*lvimrc*   
+
+        Local vimrc configuration files!
+
+
+    This plugin will simply and automatically source
+all files names ".lvimrc" between the current working 
+directory (the directory vim was started in) and the
+directory pointed to by the $HOME variable.  
+
+That's all :)  enjoy!
+
+
+ vim:set et sw=4 ts=8 tw=78 ft=help:
