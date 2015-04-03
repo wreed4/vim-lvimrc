@@ -1,4 +1,4 @@
 import vim, os.path
 
-curdir = vim.eval('pwd')
+curdir = os.getcwd()
 print curdir
