@@ -1,2 +1,1 @@
-pyscript = <sfile>:p:h . /lvimrc.py
-pyfile pyscript
+pyfile <sfile>:p:h . /lvimrc.py
