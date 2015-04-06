@@ -1,4 +1,4 @@
-import vim, os.path
+import vim, os.path, itertools
 
 
 All_Files = []
@@ -6,19 +6,25 @@ All_Files = []
 
 
 def source_files():
+    def _source_file_in_path(path):
+        lvimrc =  '{}/.lvimrc'.format('/'.join(path))
+        if os.path.exists(lvimrc):
+            vim.command('source ' + lvimrc)
+            All_Files.append(lvimrc)
+
+
     global All_Files
     All_Files = [] # empty All_Files
 
     cwd = os.getcwd()
     homedir = os.path.expandvars("$HOME")
 
-    dirnames = [name for name in cwd.split('/') if name not in homedir.split('/')]
 
-    def _source_file_in_path(path):
-        lvimrc =  '{}/.lvimrc'.format('/'.join(path))
-        if os.path.exists(lvimrc):
-            vim.command('source ' + lvimrc)
-            All_Files.append(lvimrc)
+    if cwd.startswith(homedir):
+        dirnames = [name for name in cwd.split('/') if name not in homedir.split('/')]
+    else:
+        dirnames = []
+    
 
     curpath = homedir.split('/')
 
