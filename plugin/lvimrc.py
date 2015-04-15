@@ -38,5 +38,15 @@ def source_files():
 
 
 def print_files():
-    for f in All_Files:
-        print f
+    for num, fname in enumerate(All_Files):
+        print "{}: {}".format(num, fname)
+
+
+def edit_file():
+    print_files()
+    options = '\n'.join(('&{}'.format(num) for num, fname in enumerate(All_Files)))
+    vim.command('let choice = confirm("Choose a file to edit", "{}")'.format(options))
+    choice = int(vim.eval('choice')) - 1  # confirm() indexes options at 1 
+    print choice
+    if choice >= 0:
+        vim.command('tabedit {}'.format(All_Files[choice]))
